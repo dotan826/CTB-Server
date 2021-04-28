@@ -139,7 +139,7 @@ const profilePictures = storage.bucket("finance-overall-storage"); // set Bucket
 
 app.post('/api/profile/set/:uid', multer.single("profile-pic"), function (req, res) { // api for upload file
 
-    const gcsFileName = `${req.params.uid}.jpg`; // creating a new file name
+    const gcsFileName = `${req.params.uid}.jpeg`; // creating a new file name
 
     // Create a new blob in the bucket and upload the file data.
     const fileToUpload = profilePictures.file(gcsFileName); // creating a file in google cloud storage
@@ -218,8 +218,8 @@ app.post("/api/login/new", (req, res) => {
                 });
             }
             else if (doc.name.localeCompare("Guest") !== 0) { // if Normal User trying to login
-                const gcsFileName = `${doc._id}.jpg`; // creating a new file name
-                profilePictures.file("Guest.jpg").copy(gcsFileName).then(
+                const gcsFileName = `${doc._id}.jpeg`; // creating a new file name
+                profilePictures.file("Guest.jpeg").copy(gcsFileName).then(
                     (copyResponse) => {
                         if (copyResponse[0]) {
                             console.log("Copy profile picture for New User.");
