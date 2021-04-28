@@ -1,0 +1,13 @@
+
+
+# dependencies
+/node_modules
+
+
+# passwords - DO NOT SHARE !
+/src/app-pass.ts
+
+# Google Cloud Storage Key - DO NOT SHARE !
+/key
+
+
